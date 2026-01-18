@@ -13,7 +13,7 @@ const ProjectCard = ({ project }) => {
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
 
-        <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-tranparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
 
         {demoUrl && (
           <div className="absolute bottom-4 right-4 flex items-center gap-3">
@@ -38,7 +38,7 @@ const ProjectCard = ({ project }) => {
 
       <div className="p-6 space-y-4">
         <div>
-          <h3 className="text-lg lg:text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors duation-300">
+          <h3 className="text-lg lg:text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors duration-300">
             {title}
           </h3>
           <p className="text-xs sm:text-sm text-white/60 leading-relaxed line-clamp-2">
