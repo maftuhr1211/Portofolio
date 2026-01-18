@@ -14,10 +14,9 @@ export const PERSONAL_INFO = {
 };
 
 export const SOCIAL_LINKS = {
-    github: 'xxx',
-    linkedin: 'xxx',
-    instagram: 'xxx',
-    tiktok: 'xxx'
+    instagram: 'https://instagram.com/username',
+    linkedin: 'https://linkedin.com/in/username',
+    tiktok: 'https://tiktok.com/@username',
 };
 
 export const STATS = [
