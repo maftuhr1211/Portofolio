@@ -10,6 +10,7 @@ import { PERSONAL_INFO, STATS } from '../../utils/constants';
 import { scrollToSection } from '../../hooks/useScrollSpy';
 import FadeIn from '../animations/FadeIn';
 import RadialGradientBackground from '../backgrounds/RadialGradientBackground';
+import RoyFoto from '../../assets/Royfoto.png';
 
 const Hero = () => {
   return (
@@ -84,7 +85,7 @@ const Hero = () => {
 
                 <div className="relative rounded-2xl overflow-hidden m-[1.5px] h-[calc(100%-3px)]">
                   <img
-                    src="./assets/Royfoto.png"
+                    src={RoyFoto}
                     alt="Developer at Work"
                     className="w-full h-full object-cover"
                   />
