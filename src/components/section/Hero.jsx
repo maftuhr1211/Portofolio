@@ -83,11 +83,7 @@ const Hero = () => {
                 <div className="absolute inset-[-2px] bg-linear-to-r from-primary/20 via-primary/10 to-primary animate-spin-slow rounded-2xl" />
 
                 <div className="relative rounded-2xl overflow-hidden m-[1.5px] h-[calc(100%-3px)]">
-                  <img
-                    src="/Portofolio/images/Royfoto.png"
-                    alt="Developer at Work"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="/images/Royfoto.png" />
 
                 </div>
 
