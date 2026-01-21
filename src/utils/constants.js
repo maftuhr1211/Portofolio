@@ -14,9 +14,9 @@ export const PERSONAL_INFO = {
 };
 
 export const SOCIAL_LINKS = {
-    instagram: 'https://instagram.com/username',
-    linkedin: 'https://linkedin.com/in/username',
-    tiktok: 'https://tiktok.com/@username',
+    instagram: 'https://instagram.com/maftuh_r12',
+    linkedin: 'https://linkedin.com/in/maftuh1211',
+    tiktok: 'https://tiktok.com/@lifemroy_',
 };
 
 export const STATS = [
