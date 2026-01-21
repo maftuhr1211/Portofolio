@@ -6,10 +6,11 @@ import Skills from './components/section/Skills';
 import Projects from './components/section/Projects';
 import Services from './components/section/Services';
 import Contact from './components/section/Contact';
+import Footer from './components/layout/Footer';
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-black pb-[100vh]">
+    <div className="min-h-screen bg-black">
       <Navbar />
 
       <main>
@@ -20,6 +21,8 @@ const App = () => {
         <Services />
         <Contact />
       </main>
+
+      <Footer />
     </div>
   );
 };
