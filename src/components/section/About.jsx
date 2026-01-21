@@ -20,14 +20,14 @@ const About = () => {
   ];
 
 
-  return <section id="about" className="relative py-10 bg-black overflow-hidden scroll-mt-12">
+  return <section id="about" className="relative py-6 md:py-10 bg-black overflow-hidden scroll-mt-12">
     <RadialGradientBackground variant="about" />
 
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Main Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-12 md:mb-20">
         {/* Left Colomn - Content */}
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col mb-12 md:mb-20">
           <div className="flex flex-col gap-8">
             <FadeIn delay={60}>
               <div className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-primary/30 bg-primary/10 rounded-full w-fit">
