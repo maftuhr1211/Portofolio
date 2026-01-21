@@ -95,7 +95,7 @@ const About = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="col-span-2 relative group">
               <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity duration-300"></div>
-              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300">
+              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 hover:border-primary/30 transition-all duration-300">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/10 rounded-xl">
                     <PenTool className="w-6 h-6 text-primary" />
@@ -112,7 +112,7 @@ const About = () => {
 
             <div className="relative group">
               <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 h-full">
+              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 hover:border-primary/30 transition-all duration-300 h-full">
                 <div className="p-3 bg-primary/10 rounded-xl w-fit mb-4">
                   <Sparkles className="w-5 h-5 text-primary" />
                 </div>
@@ -125,7 +125,7 @@ const About = () => {
 
             <div className="relative group">
               <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 h-full">
+              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-p-4 md:p-6 hover:border-primary/30 transition-all duration-300 h-full">
                 <div className="p-3 bg-primary/10 rounded-xl w-fit mb-4">
                   <Download className="w-5 h-5 text-primary" />
                 </div>
@@ -138,7 +138,7 @@ const About = () => {
 
             <div className="col-span-2 relative group">
               <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300">
+              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 hover:border-primary/30 transition-all duration-300">
                 <div className="grid grid-cols-3 gap-6 text-center">
                   <div>
                     <div className="text-2xl font-bold text-primary mb-1">100%</div>
@@ -175,7 +175,7 @@ const About = () => {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="group relative bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/50 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:scale-105"
+                className="group relative bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/50 rounded-2xl p-4 md:p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:scale-105"
               >
                 <skill.icon className="text-3xl text-primary" />
                 <div className="text-sm text-white/80 font-medium text-center">
