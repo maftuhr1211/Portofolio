@@ -73,7 +73,7 @@ const Contact = () => {
                             </span>
                         </div>
 
-                        <h2 className="text-4xl lg:text-5xl font-normal text-white mb-3">
+                        <h2 className="text-3xl lg:text-4xl font-normal text-white mb-2">
                             Let’s Work Together
                         </h2>
 
@@ -83,10 +83,10 @@ const Contact = () => {
                     </div>
                 </FadeIn>
 
-                <div className="grid md:grid-cols-2 gap-12">
+                <div className="grid md:grid-cols-2 gap-8 items-start">
                     <FadeIn delay={100}>
-                        <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-                            <form onSubmit={handleSubmit} className="space-y-6">
+                        <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                            <form onSubmit={handleSubmit} className="space-y-4">
                                 <div>
                                     <label className="block text-sm text-white/80 mb-2">Name</label>
                                     <input
@@ -94,7 +94,7 @@ const Contact = () => {
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl text-white placeholder-white/40 focus:text-white"
+                                        className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-white placeholder-white/40 focus:text-white"
                                     />
                                 </div>
 
@@ -105,7 +105,7 @@ const Contact = () => {
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl text-white placeholder-white/40 focus:text-white"
+                                        className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-white placeholder-white/40 focus:text-white"
                                     />
                                 </div>
 
@@ -116,12 +116,12 @@ const Contact = () => {
                                         value={formData.message}
                                         onChange={handleChange}
                                         rows={5}
-                                        className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl text-white placeholder-white/40 focus:text-white resize-none"
+                                        className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-white placeholder-white/40 focus:text-white resize-none"
                                     />
                                 </div>
 
-                                <button type="submit" className="w-full px-6 py-3 rounded-xl bg-primary text-white flex justify-center gap-2">
-                                    Send Message <Send className="w-5 h-5" />
+                                <button type="submit" className="w-full px-5 py-2.5 rounded-lg bg-primary text-white flex justify-center gap-2">
+                                    Send Message <Send className="w-4 h-4" />
                                 </button>
 
                                 {status.message && (
@@ -133,7 +133,7 @@ const Contact = () => {
 
                     {/* Contact Info */}
                     <FadeIn delay={200}>
-                        <div className="space-y-8">
+                        <div className="space-y-6">
                             <div>
                                 <h3 className="text-2xl font-semibold text-white mb-4">
                                     Let's Contact
@@ -143,11 +143,11 @@ const Contact = () => {
                                 </p>
                             </div>
 
-                            <div className="space-y-4">
-                                <div className="group relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300">
+                            <div className="space-y-3">
+                                <div className="group relative bg-white/5 border border-white/10 rounded-xl p-4 hover:border-primary/30 transition-all duration-300">
                                     <div className="flex items-start gap-4">
-                                        <div className="p-3 bg-linear-to-br from-primary/20 to-primary/20 border border-primary/30 rounded-xl">
-                                            <Mail className="w-6 h-6 text-primary" />
+                                        <div className="p-2 bg-linear-to-br from-primary/20 to-primary/20 border border-primary/30 rounded-lg">
+                                            <Mail className="w-5 h-5 text-primary" />
                                         </div>
                                         <div className="flex-1">
                                             <p className="text-sm text-white/60 mb-1">Email</p>
@@ -161,10 +161,10 @@ const Contact = () => {
                                     <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-primary/5 rounded-2xl transition-all duration-300 pointer-events-none" />
                                 </div>
 
-                                <div className="group relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300">
+                                <div className="group relative bg-white/5 border border-white/10 rounded-xl p-4 hover:border-primary/30 transition-all duration-300">
                                     <div className="flex items-start gap-4">
-                                        <div className="p-3 bg-linear-to-br from-primary/20 to-primary/20 border border-primary/30 rounded-xl">
-                                            <MapPin className="w-6 h-6 text-primary" />
+                                        <div className="p-2 bg-linear-to-br from-primary/20 to-primary/20 border border-primary/30 rounded-lg">
+                                            <MapPin className="w-5 h-5 text-primary" />
                                         </div>
                                         <div className="flex-1">
                                             <p className="text-sm text-white/60 mb-1">Location</p>
