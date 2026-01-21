@@ -10,7 +10,7 @@ import Footer from './components/layout/Footer';
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-[80svh] md:min-h-screen bg-black overflow-x-hidden">
       <Navbar />
 
       <main>

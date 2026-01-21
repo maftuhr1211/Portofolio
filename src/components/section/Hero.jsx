@@ -14,7 +14,7 @@ import RoyFoto from '../../assets/Royfoto.jpg';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+    <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-black">
       <RadialGradientBackground variant="hero" />
 
       {/* FULL WIDTH CONTAINER */}
