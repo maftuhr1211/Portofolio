@@ -25,7 +25,7 @@ const Services = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn delay={0}>
-                <div className="text-center mb-16">
+                <div className="text-center mb-8">
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
                         <Wrench className="w-4 h-4 text-primary" />
                         <span className="text-sm text-primary font-medium tracking-wider uppercase">What I Ofer</span>
@@ -44,10 +44,10 @@ const Services = () => {
                     const IconComponent = Icons[service.icon] || Icons.Palette;
                     return (
                         <FadeIn key={service.id} delay={100 + index * 100}>
-                            <div className="group relative bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-primary/30 transition-all duration-300 h-full min-h-[280px] flex flex-col">
+                            <div className="group relative bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-primary/30 transition-all duration-300 h-full min-h-[200px] flex flex-col">
                                 <div className="mb-6">
-                                    <div className="w-16 h-16 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center group-hover:scale-110 trasition-transform duration-300">
-                                        <IconComponent className="w-8 h-8 text-primary" />
+                                    <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center group-hover:scale-110 trasition-transform duration-300">
+                                        <IconComponent className="w-6 h-6 text-primary" />
                                     </div>
                                 </div>
 

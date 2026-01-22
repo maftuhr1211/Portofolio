@@ -94,7 +94,7 @@ const Contact = () => {
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-white placeholder-white/40 focus:text-white"
+                                        className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-white placeholder-white/40 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_15px_rgba(59,130,246,0.25)] focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/40 focus:shadow-[0_0_25px_rgba(59,130,246,0.35)]"
                                     />
                                 </div>
 
@@ -105,7 +105,7 @@ const Contact = () => {
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-white placeholder-white/40 focus:text-white"
+                                        className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-white placeholder-white/40 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_15px_rgba(59,130,246,0.25)] focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/40 focus:shadow-[0_0_25px_rgba(59,130,246,0.35)]"
                                     />
                                 </div>
 
@@ -116,17 +116,25 @@ const Contact = () => {
                                         value={formData.message}
                                         onChange={handleChange}
                                         rows={5}
-                                        className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-white placeholder-white/40 focus:text-white resize-none"
+                                        className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-white placeholder-white/40 resize-none transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_15px_rgba(59,130,246,0.25)] focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/40 focus:shadow-[0_0_25px_rgba(59,130,246,0.35)] resize-none"
                                     />
                                 </div>
 
-                                <button type="submit" className="w-full px-5 py-2.5 rounded-lg bg-primary text-white flex justify-center gap-2">
+                                <button type="submit" className="w-full px-5 py-2.5 rounded-lg bg-primary text-white flex justify-center items-center gap-2 transition-all duration-300 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]">
                                     Send Message <Send className="w-4 h-4" />
                                 </button>
 
                                 {status.message && (
-                                    <div className="text-sm">{status.message}</div>
+                                    <div
+                                        className={`text-sm mt-2 ${status.type === 'success'
+                                                ? 'text-green-400'
+                                                : 'text-red-400'
+                                            }`}
+                                    >
+                                        {status.message}
+                                    </div>
                                 )}
+
                             </form>
                         </div>
                     </FadeIn>
@@ -139,7 +147,7 @@ const Contact = () => {
                                     Let's Contact
                                 </h3>
                                 <p className="text-white/60 leading-relaxed">
-                                    I'm always open to discussing new project, creative ideas, or oppertunities to be part of your vision. Feel free to reach out!
+                                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                                 </p>
                             </div>
 
