@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, PenTool, Sparkles } from 'lucide-react';
+import { Download, PenTool, Sparkles, Zap } from 'lucide-react';
 import { SiCanva, SiCoreldraw, SiFigma, SiAdobephotoshop, SiAdobeindesign } from 'react-icons/si';
 import { TbTable } from 'react-icons/tb';
 import { PERSONAL_INFO, ABOUT_STATS } from '../../utils/constants';
@@ -7,6 +7,19 @@ import FadeIn from '../animations/FadeIn';
 import RadialGradientBackground from '../backgrounds/RadialGradientBackground';
 
 const About = () => {
+
+  const serviceCards = [
+    {
+      title: 'Graphic Design',
+      desc: 'Creating clear and consistent visuals that strengthen product identity.',
+      icon: Sparkles,
+    },
+    {
+      title: 'Performance',
+      desc: 'Designing efficient interfaces that reduce friction.',
+      icon: Zap,
+    },
+  ];
 
   const skills = [
     { name: 'Canva', icon: SiCanva },
@@ -75,7 +88,7 @@ const About = () => {
                   {ABOUT_STATS.map((stat, index) => (
                     <div key={index} className="relative">
                       <div className="absolute -left-4 top-0 w-1 h-full bg-linear-to-b from-primary via-primary/50 to-primary/20 rounded-full"></div>
-                      <div className="text-3xl font-normal text-white mb-2 font-mono">
+                      <div className="text-2xl font-normal text-white mb-2 font-mono">
                         {stat.value}
                       </div>
                       <p className="text-sm text-white/60 leading-snug">
@@ -118,7 +131,7 @@ const About = () => {
                         Expertise
                       </h3>
                       <p className="text-sm text-white/70 leading-relaxed">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                        Designing digital products with a strong focus on user experience, visual clarity, and scalable design systems.
                       </p>
                     </div>
                   </div>
@@ -126,16 +139,21 @@ const About = () => {
               </div>
 
               {/* Cards */}
-              {['Graphic Design', 'Performance'].map((title, i) => (
-                <div key={i} className="relative bg-white/5 border border-white/10 rounded-2xl p-6">
+              {serviceCards.map((item, i) => (
+                <div
+                  key={i}
+                  className="relative bg-white/5 border border-white/10 rounded-2xl p-6"
+                >
                   <div className="p-3 bg-primary/10 rounded-xl w-fit mb-4">
-                    <Sparkles className="w-5 h-5 text-primary" />
+                    <item.icon className="w-5 h-5 text-primary" />
                   </div>
+
                   <h3 className="text-base font-semibold text-white mb-2">
-                    {title}
+                    {item.title}
                   </h3>
+
                   <p className="text-sm text-white/70 leading-relaxed">
-                    Lorem Ipsum is simply dummy text of the printing industry.
+                    {item.desc}
                   </p>
                 </div>
               ))}
@@ -172,10 +190,15 @@ const About = () => {
               {skills.map((skill, index) => (
                 <div
                   key={index}
-                  className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center gap-3 hover:scale-105 transition"
+                  className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 ease-out hover:scale-105 hover:border-primary/40 hover:shadow-[0_0_25px_rgba(59,130,246,0.35)]"
                 >
-                  <skill.icon className="text-3xl text-primary" />
-                  <span className="text-sm text-white/80">{skill.name}</span>
+                  <div className="flex items-center justify-center h-10">
+                    <skill.icon className="text-3xl text-primary block" />
+                  </div>
+
+                  <span className="text-sm text-white/80 text-center">
+                    {skill.name}
+                  </span>
                 </div>
               ))}
             </div>

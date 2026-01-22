@@ -27,9 +27,9 @@ export const STATS = [
 ];
 
 export const ABOUT_STATS = [
-    { label: 'Happy Clients', value: '45+' },
-    { label: 'Code Commits', value: '2,5k+' },
-    { label: 'GitHub Stars', value: '500+' },
+  { label: 'Focus', value: 'Product Design' },
+  { label: 'Design Style', value: 'Clean UI' },
+  { label: 'Availability', value: 'Open' },
 ];
 
 export const NAV_LINKS = [
