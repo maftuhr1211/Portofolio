@@ -3,9 +3,11 @@ import { projects, categories } from '../../data/projects'
 import { Target, FileSpreadsheet, Image, BarChart3, Layout, Sparkles, Briefcase, ChevronLeft, ChevronRight } from "lucide-react"
 import ProjectCard from '../ui/ProjectCard'
 import FadeIn from "../animations/FadeIn"
+import ProjectModal from '../ui/ProjectModal';
 
 const Projects = () => {
 
+    const [selectedProject, setSelectedProject] = useState(null);
     const [activeCategory, setActiveCategory] = useState('All');
     const [currentIndex, setCurrentIndex] = useState(0);
     const scrollContainerRef = useRef(null);
@@ -150,7 +152,10 @@ const Projects = () => {
                                         key={project.id}
                                         className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start"
                                     >
-                                        <ProjectCard project={project} />
+                                        <ProjectCard
+                                            project={project}
+                                            onClick={() => setSelectedProject(project)}
+                                        />
                                     </div>
                                 ))}
                             </div>
@@ -171,7 +176,7 @@ const Projects = () => {
                                 <button
                                     onClick={nextSlide}
                                     disabled={currentIndex >= filteredProjects.length - getVisibleCards()}
-                                    className="flex absolute right-0 top-1/2 -transalte-y-1/2 -translate-x-2 lg:-translate-x-4 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed z-10"
+                                    className="flex absolute -right-8 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-4 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed z-10"
                                     aria-label="Next projects"
                                 >
                                     <ChevronRight className="w-6 h-6 text-white" />
@@ -198,6 +203,12 @@ const Projects = () => {
                     </div>
                 </FadeIn>
             </div>
+            {selectedProject && (
+                <ProjectModal
+                    project={selectedProject}
+                    onClose={() => setSelectedProject(null)}
+                />
+            )}
         </section>
     )
 }

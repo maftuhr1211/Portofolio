@@ -1,15 +1,18 @@
 import React from 'react';
 import { ExternalLink, TrendingUp } from 'lucide-react';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, onClick }) => {
   const { title, description, image, technologies, metrics, demoUrl } = project;
 
   return (
-    <div className="group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300">
+    <div
+      onClick={onClick}
+      className="group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300 cursor-pointer"
+    >
       <div className="relative h-64 overflow-hidden">
         <img
-          src={image}
-          alt={title}
+          src={project.images?.[0]}
+          alt={project.title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
 
@@ -17,15 +20,16 @@ const ProjectCard = ({ project }) => {
 
         {demoUrl && (
           <div className="absolute bottom-4 right-4 flex items-center gap-3">
-            <a
-              href={demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 hover:primary/30 hover:border-primary/50 transition-all duration-300 hover:scale-110"
-              title="View Demo"
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onClick();
+              }}
+              className="p-2.5 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 hover:border-primary/50 transition-all duration-300 hover:scale-110"
+              title="View Detail"
             >
               <ExternalLink className="w-4 h-4 text-white" />
-            </a>
+            </button>
           </div>
         )}
 
