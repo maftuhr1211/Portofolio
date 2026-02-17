@@ -121,6 +121,7 @@ const ProjectModal = ({ project, onClose }) => {
                     ))}
                 </div>
 
+                {/*
                 {project.demoUrl && (
                     <a
                         href={project.demoUrl}
@@ -131,6 +132,7 @@ const ProjectModal = ({ project, onClose }) => {
                         Visit Project
                     </a>
                 )}
+                */}
             </div>
         </div>
     );
