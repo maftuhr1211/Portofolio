@@ -5,6 +5,7 @@ import p4 from '../assets/projects/p4.jpg';
 import p5 from '../assets/projects/p5.jpg';
 import p6 from '../assets/projects/p6.jpg';
 import p7 from '../assets/projects/p7.jpg';
+import p8 from '../assets/projects/p8.jpg';
 
 export const projects = [
   {
@@ -72,6 +73,16 @@ export const projects = [
     title: 'Experimental Design',
     description: 'xxx',
     images: [p7, p1, p2],
+    category: 'Other',
+    technologies: ['Figma', 'Prototype'],
+    metrics: 'Experimental visual exploration',
+    demoUrl: 'xxx',
+  },
+  {
+    id: 8,
+    title: 'Experimental Design',
+    description: 'xxx',
+    images: [p8, p1, p2],
     category: 'Other',
     technologies: ['Figma', 'Prototype'],
     metrics: 'Experimental visual exploration',
