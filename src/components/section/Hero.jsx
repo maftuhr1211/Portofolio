@@ -10,7 +10,7 @@ import { PERSONAL_INFO, STATS } from '../../utils/constants';
 import { scrollToSection } from '../../hooks/useScrollSpy';
 import FadeIn from '../animations/FadeIn';
 import RadialGradientBackground from '../backgrounds/RadialGradientBackground';
-import RoyFoto from '../../assets/Royfoto.jpg';
+import RoyFoto from '../../assets/roy12.png';
 
 const Hero = () => {
   return (
