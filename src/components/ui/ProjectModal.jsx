@@ -1,14 +1,22 @@
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const ProjectModal = ({ project, onClose }) => {
     const [activeImage, setActiveImage] = useState(0);
     const touchStartX = useRef(null);
+
     const nextImage = () => {
         setActiveImage((prev) =>
             prev === project.images.length - 1 ? 0 : prev + 1
         );
     };
+
+    const prevImage = () => {
+        setActiveImage((prev) =>
+            prev === 0 ? project.images.length - 1 : prev - 1
+        );
+    };
+
     const handleTouchStart = (e) => {
         touchStartX.current = e.touches[0].clientX;
     };
@@ -20,20 +28,23 @@ const ProjectModal = ({ project, onClose }) => {
         const diff = touchStartX.current - touchEndX;
 
         if (diff > 50) {
-            nextImage(); // swipe kiri → next
+            nextImage();
         } else if (diff < -50) {
-            prevImage(); // swipe kanan → prev
+            prevImage();
         }
 
         touchStartX.current = null;
     };
 
-    const prevImage = () => {
-        setActiveImage((prev) =>
-            prev === 0 ? project.images.length - 1 : prev - 1
-        );
-    };
+    // 🔒 Lock scroll background saat modal aktif
+    useEffect(() => {
+        const originalOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
 
+        return () => {
+            document.body.style.overflow = originalOverflow;
+        };
+    }, []);
 
     if (!project) return null;
 
@@ -44,8 +55,9 @@ const ProjectModal = ({ project, onClose }) => {
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="relative bg-neutral-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-2xl"
+                className="relative bg-neutral-900 rounded-2xl max-w-4xl w-full max-h-[95vh] overflow-y-auto p-6 shadow-2xl"
             >
+                {/* Close Button */}
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-white/60 hover:text-white"
@@ -55,30 +67,31 @@ const ProjectModal = ({ project, onClose }) => {
 
                 {/* Main Image */}
                 <div
-                    className="relative mb-4"
+                    className="relative mb-4 h-80 sm:h-96 lg:h-[550px] overflow-hidden rounded-xl"
                     onTouchStart={handleTouchStart}
-                    onTouchEnd={handleTouchEnd}>
+                    onTouchEnd={handleTouchEnd}
+                >
                     <img
                         src={project.images[activeImage]}
                         alt={project.title}
-                        className="rounded-xl w-full select-none"
+                        className="w-full h-full object-cover"
                         draggable="false"
                     />
 
+                    {/* Arrow Controls */}
                     {project.images.length > 1 && (
                         <>
                             <button
                                 onClick={prevImage}
-                                className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 backdrop-blur-sm p-2 rounded-full hover:bg-black/70 transition"
+                                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 p-2 rounded-full text-white hover:bg-black/70"
                             >
-                                <ChevronLeft className="w-5 h-5 text-white" />
+                                <ChevronLeft />
                             </button>
-
                             <button
                                 onClick={nextImage}
-                                className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 backdrop-blur-sm p-2 rounded-full hover:bg-black/70 transition"
+                                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 p-2 rounded-full text-white hover:bg-black/70"
                             >
-                                <ChevronRight className="w-5 h-5 text-white" />
+                                <ChevronRight />
                             </button>
                         </>
                     )}
@@ -93,23 +106,27 @@ const ProjectModal = ({ project, onClose }) => {
                                 src={img}
                                 alt="preview"
                                 onClick={() => setActiveImage(index)}
-                                className={`w-20 h-20 object-cover rounded-lg cursor-pointer border-2 ${activeImage === index
-                                    ? "border-primary"
-                                    : "border-transparent"
-                                    }`}
+                                className={`w-20 h-20 object-cover rounded-lg cursor-pointer border-2 ${
+                                    activeImage === index
+                                        ? "border-primary"
+                                        : "border-transparent"
+                                }`}
                             />
                         ))}
                     </div>
                 )}
 
+                {/* Title */}
                 <h3 className="text-2xl text-white mb-2">
                     {project.title}
                 </h3>
 
+                {/* Description */}
                 <p className="text-white/60 mb-4">
                     {project.description}
                 </p>
 
+                {/* Technologies */}
                 <div className="flex flex-wrap gap-3">
                     {project.technologies?.map((tech, i) => (
                         <span
@@ -121,6 +138,7 @@ const ProjectModal = ({ project, onClose }) => {
                     ))}
                 </div>
 
+                {/* Demo Link */}
                 {/*
                 {project.demoUrl && (
                     <a
