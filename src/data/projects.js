@@ -18,6 +18,10 @@ import p17 from '../assets/projects/p17.png';
 import p18 from '../assets/projects/p18.png';
 import p19 from '../assets/projects/p19.png';
 import p20 from '../assets/projects/p20.png';
+import p21 from '../assets/projects/p21.png';
+import p22 from '../assets/projects/p22.png';
+import p23 from '../assets/projects/p23.png';
+import p24 from '../assets/projects/p24.png';
 
 export const projects = [
   {
@@ -29,15 +33,15 @@ export const projects = [
   technologies: ['Canva', 'Photoshop'],
   metrics: 'Automated workflow & data organization',
   demoUrl: 'xxx',
-},
+  },
   {
     id: 2,
-    title: 'Ramadan Greeting Poster',
-    description: 'A creative poster design featuring layered architectural elements and cloud effects, blending marble textures with serene blue tones to evoke a peaceful Ramadan atmosphere.',
-    images: [p3, p4],
-    category: 'Poster',
-    technologies: ['Canva', 'Photoshop'],
-    metrics: 'Advanced layering & depth composition',
+    title: 'Personal Budget Tracker',
+    description: 'A comprehensive automated financial dashboard built in Google Sheets, featuring real-time transaction logging, automated expense categorization, and visual data insights for better money management.',
+    images: [p21, p22, p23, p24],
+    category: 'Spreadsheets',
+    technologies: ['Google Sheets', 'Excel Formulas (Advanced)', 'Data Visualization'],
+    metrics: 'Automated data processing & financial visualization',
     demoUrl: 'xxx',
   },
   {
@@ -120,6 +124,16 @@ export const projects = [
     metrics: 'Dynamic composition & energy portrayal',
     demoUrl: 'xxx',
   },
+  {
+    id: 11,
+    title: 'Ramadan Greeting Poster',
+    description: 'A creative poster design featuring layered architectural elements and cloud effects, blending marble textures with serene blue tones to evoke a peaceful Ramadan atmosphere.',
+    images: [p3, p4],
+    category: 'Poster',
+    technologies: ['Canva', 'Photoshop'],
+    metrics: 'Advanced layering & depth composition',
+    demoUrl: 'xxx',
+  },  
 ];
 
 
