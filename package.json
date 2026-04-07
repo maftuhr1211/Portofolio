@@ -2,6 +2,7 @@
   "name": "react-dev-portofolio",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://mroyy.my.id",
   "type": "module",
   "scripts": {
     "dev": "vite",
