@@ -1,9 +1,9 @@
 export const services = [
   {
     id: 1,
-    icon: 'Layout',
-    title: 'UI & Dashboard Design',
-    description: 'Designing clean and functional interfaces for web and dashboard systems focused on usability and clarity.',
+    icon: 'Image',
+    title: 'Poster & Social Media Design',
+    description: 'Creating visual content that communicates messages effectively for education, campaigns, and branding.',
   },
   {
     id: 2,
@@ -19,9 +19,9 @@ export const services = [
   },
   {
     id: 4,
-    icon: 'Image',
-    title: 'Poster & Social Media Design',
-    description: 'Creating visual content that communicates messages effectively for education, campaigns, and branding.',
+    icon: 'Layout',
+    title: 'UI & Dashboard Design',
+    description: 'Designing clean and functional interfaces for web and dashboard systems focused on usability and clarity.',
   },
   {
     id: 5,

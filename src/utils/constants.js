@@ -1,16 +1,15 @@
 export const PERSONAL_INFO = {
-    name: 'Royy:v',
-    title: 'Digital Product & Productivity Designer',
+    name: 'Maftuh Royhan',
+    title: 'Creative Designer & Data Systems Specialist',
     email: 'maftuhr1211@gmail.com',
     location: 'Indonesia',
-    tagline: 'Clean design. Smart systems. Better workflows',
+    tagline: 'Crafting beautiful interfaces. Building powerful systems. Simplifying complex data.',
     resume: '/cvroy.pdf',
     bio: [
-        "I am a Digital Product & Productivity Designer with experience in designing functional, efficient, and user-centered digital products. I focus on how thoughtful design can improve workflows, productivity, and overall user experience.",
-        "My expertise spans the end-to-end digital product design process, from system structure and user flows to consistent and scalable interface design. I enjoy combining visual aesthetics with logical, well-structured systems to create solutions that are not only visually appealing but also practical and easy to use.",
-        "Outside of design work, I actively explore productivity systems, refine digital workflows, and stay up to date with evolving design and technology trends to continuously improve the quality of my work.",
+        "I am a <b>Visual Designer</b> with a strong foundation in <b>branding and poster design</b>. I specialize in creating <b>high-impact visual identities</b> that communicate messages clearly and creatively across various media.",
+        "My design journey has evolved into the digital product space, where I translate my eye for branding into <b>intuitive UI Design</b>. I believe that a great user interface should not only be visually stunning but also built on a <b>logical, well-structured foundation</b>.",
+        "To complement my creative side, I have specialized expertise in building <b>complex Spreadsheet systems</b> and <b>data architectures</b>. This unique combination allows me to handle everything from high-level branding concepts to the <b>technical logic of productivity workflows</b>."
     ]
-
 };
 
 export const SOCIAL_LINKS = {
@@ -27,9 +26,9 @@ export const STATS = [
 ];
 
 export const ABOUT_STATS = [
-  { label: 'Focus', value: 'Product Design' },
-  { label: 'Design Style', value: 'Clean UI' },
-  { label: 'Availability', value: 'Open' },
+    { label: 'Focus', value: 'Visual Branding' },
+    { label: 'Design Style', value: 'Minimalist & Structured' },
+    { label: 'Availability', value: 'Open' },
 ];
 
 export const NAV_LINKS = [

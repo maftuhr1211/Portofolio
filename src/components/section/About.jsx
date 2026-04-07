@@ -10,13 +10,13 @@ const About = () => {
 
   const serviceCards = [
     {
-      title: 'Graphic Design',
-      desc: 'Creating clear and consistent visuals that strengthen product identity.',
+      title: 'Visual Identity & UI',
+      desc: 'Crafting high-impact branding, poster designs, and intuitive user interfaces that blend aesthetics with functionality.',
       icon: Sparkles,
     },
     {
-      title: 'Performance',
-      desc: 'Designing efficient interfaces that reduce friction.',
+      title: 'Data & Workflow',
+      desc: 'Building advanced spreadsheet systems and logical data architectures to optimize productivity and digital workflows.',
       icon: Zap,
     },
   ];
@@ -52,7 +52,7 @@ const About = () => {
                 <div className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-primary/30 bg-primary/10 rounded-full w-fit">
                   <PenTool className="w-4 h-4 text-primary" />
                   <span className="text-sm text-primary font-medium">
-                    Digital Design Developer
+                    Creative Designer & Systems Builder
                   </span>
                   <Sparkles className="w-4 h-4 text-primary" />
                 </div>
@@ -70,9 +70,9 @@ const About = () => {
                     <p
                       key={index}
                       className="text-[14px] md:text-[15px] lg:text-[16px] text-white/70 leading-relaxed"
-                    >
-                      {paragraph}
-                    </p>
+                      // GANTI BAGIAN INI:
+                      dangerouslySetInnerHTML={{ __html: paragraph }}
+                    />
                   ))}
                 </div>
               </FadeIn>
@@ -128,10 +128,10 @@ const About = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-2">
-                        Expertise
+                        Graphic Design
                       </h3>
                       <p className="text-sm text-white/70 leading-relaxed">
-                        Designing digital products with a strong focus on user experience, visual clarity, and scalable design systems.
+                        Creating clear and consistent visuals that strengthen product identity.
                       </p>
                     </div>
                   </div>
