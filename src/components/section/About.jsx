@@ -7,16 +7,15 @@ import FadeIn from '../animations/FadeIn';
 import RadialGradientBackground from '../backgrounds/RadialGradientBackground';
 
 const About = () => {
-
   const serviceCards = [
     {
       title: 'Visual Identity & UI',
-      desc: 'Crafting high-impact branding, poster designs, and intuitive user interfaces that blend aesthetics with functionality.',
+      desc: 'Crafting high-impact branding, poster designs, and intuitive user interfaces.',
       icon: Sparkles,
     },
     {
       title: 'Data & Workflow',
-      desc: 'Building advanced spreadsheet systems and logical data architectures to optimize productivity and digital workflows.',
+      desc: 'Building advanced spreadsheet systems to optimize productivity.',
       icon: Zap,
     },
   ];
@@ -25,160 +24,125 @@ const About = () => {
     { name: 'Canva', icon: SiCanva },
     { name: 'CorelDRAW', icon: SiCoreldraw },
     { name: 'Figma', icon: SiFigma },
-    { name: 'Adobe Photoshop', icon: SiAdobephotoshop },
-    { name: 'Adobe InDesign', icon: SiAdobeindesign },
+    { name: 'Photoshop', icon: SiAdobephotoshop },
+    { name: 'InDesign', icon: SiAdobeindesign },
     { name: 'Spreadsheet', icon: TbTable },
   ];
 
   return (
-    <section
-      id="about"
-      className="relative py-14 bg-black overflow-hidden scroll-mt-12"
-    >
+    <section id="about" className="relative py-10 md:py-20 bg-black overflow-hidden scroll-mt-20">
       <RadialGradientBackground variant="about" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        
         {/* ================= MAIN GRID ================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start mb-16">
 
-          {/* ================= LEFT COLUMN ================= */}
-          <div className="flex flex-col gap-12">
-
-            {/* Heading & Bio */}
-            <div className="flex flex-col gap-8">
-
+          {/* ================= LEFT COLUMN (Bio & Stats) ================= */}
+          <div className="flex flex-col gap-8 md:gap-12">
+            <div className="flex flex-col gap-6">
               <FadeIn delay={60}>
-                <div className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-primary/30 bg-primary/10 rounded-full w-fit">
-                  <PenTool className="w-4 h-4 text-primary" />
-                  <span className="text-sm text-primary font-medium">
+                <div className="inline-flex items-center gap-2 px-4 py-2 border border-primary/30 bg-primary/10 rounded-full w-fit">
+                  <PenTool className="w-3.5 h-3.5 text-primary" />
+                  <span className="text-xs md:text-sm text-primary font-bold uppercase tracking-wider">
                     Creative Designer & Systems Builder
                   </span>
-                  <Sparkles className="w-4 h-4 text-primary" />
                 </div>
               </FadeIn>
 
               <FadeIn delay={100}>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-white leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
                   Creating Superior Digital Experiences
                 </h2>
               </FadeIn>
 
               <FadeIn delay={200}>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-4">
                   {PERSONAL_INFO.bio.map((paragraph, index) => (
                     <p
                       key={index}
-                      className="text-[14px] md:text-[15px] lg:text-[16px] text-white/70 leading-relaxed"
-                      // GANTI BAGIAN INI:
+                      className="text-sm md:text-base text-white/70 leading-relaxed [&>b]:text-white [&>b]:font-bold"
                       dangerouslySetInnerHTML={{ __html: paragraph }}
                     />
                   ))}
                 </div>
               </FadeIn>
-
             </div>
 
-            {/* ================= STATS + CTA (FIXED) ================= */}
             <FadeIn delay={300}>
-              <div className="flex flex-col gap-5">
-
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-8">
+              <div className="flex flex-col gap-6">
+                {/* Stats Mobile Friendly */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                   {ABOUT_STATS.map((stat, index) => (
-                    <div key={index} className="relative">
-                      <div className="absolute -left-4 top-0 w-1 h-full bg-linear-to-b from-primary via-primary/50 to-primary/20 rounded-full"></div>
-                      <div className="text-2xl font-normal text-white mb-2 font-mono">
-                        {stat.value}
-                      </div>
-                      <p className="text-sm text-white/60 leading-snug">
-                        {stat.label}
-                      </p>
+                    <div key={index} className="relative pl-4">
+                      <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-primary to-transparent rounded-full" />
+                      <div className="text-xl md:text-2xl font-bold text-white font-mono">{stat.value}</div>
+                      <p className="text-xs text-white/50 uppercase tracking-tighter">{stat.label}</p>
                     </div>
                   ))}
                 </div>
 
-                {/* Divider */}
-                <div className="w-16 h-px bg-white/20"></div>
-
-                {/* CTA */}
                 <button
                   onClick={() => window.open(PERSONAL_INFO.resume, '_blank')}
-                  className="inline-flex w-fit items-center gap-2 bg-white text-[#212121] font-medium border border-white rounded-xl px-4 py-4 text-sm transition-all duration-300 hover:bg-[#1e293b] hover:text-white hover:scale-[1.02] active:scale-[0.97]"
+                  className="inline-flex w-full md:w-fit justify-center items-center gap-2 bg-white text-black font-bold rounded-xl px-6 py-4 text-sm transition-all hover:bg-primary hover:text-white group"
                 >
-                  <Download className="w-5 h-5" />
+                  <Download className="w-5 h-5 group-hover:animate-bounce" />
                   Download Resume
                 </button>
-
               </div>
             </FadeIn>
-
           </div>
 
-          {/* ================= RIGHT COLUMN ================= */}
+          {/* ================= RIGHT COLUMN (Cards) ================= */}
           <FadeIn delay={200}>
-            <div className="grid grid-cols-2 gap-4">
-
-              {/* Expertise */}
-              <div className="col-span-2 relative group">
-                <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-xl">
-                      <PenTool className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">
-                        Graphic Design
-                      </h3>
-                      <p className="text-sm text-white/70 leading-relaxed">
-                        Creating clear and consistent visuals that strengthen product identity.
-                      </p>
-                    </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Graphic Design - Full Width Mobile */}
+              <div className="sm:col-span-2 relative bg-white/[0.03] border border-white/10 rounded-2xl p-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-primary/10 rounded-xl">
+                    <PenTool className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-white mb-1">Graphic Design</h3>
+                    <p className="text-sm text-white/60 leading-relaxed">
+                      Creating clear and consistent visuals that strengthen product identity.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* Cards */}
+              {/* Service Cards */}
               {serviceCards.map((item, i) => (
-                <div
-                  key={i}
-                  className="relative bg-white/5 border border-white/10 rounded-2xl p-6"
-                >
-                  <div className="p-3 bg-primary/10 rounded-xl w-fit mb-4">
+                <div key={i} className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 flex flex-col gap-4">
+                  <div className="p-3 bg-primary/10 rounded-xl w-fit">
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
-
-                  <h3 className="text-base font-semibold text-white mb-2">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-sm text-white/70 leading-relaxed">
-                    {item.desc}
-                  </p>
+                  <div>
+                    <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-xs text-white/60 leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
               ))}
 
-              {/* Bottom Stats */}
-              <div className="col-span-2 bg-white/5 border border-white/10 rounded-2xl p-6">
-                <div className="grid grid-cols-3 text-center gap-6">
+              {/* Bottom Mini Stats */}
+              <div className="sm:col-span-2 bg-white/[0.03] border border-white/10 rounded-2xl p-6">
+                <div className="grid grid-cols-3 gap-2 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-primary">100%</div>
-                    <div className="text-xs text-white/60">Client Satisfaction</div>
+                    <div className="text-lg md:text-xl font-bold text-primary">100%</div>
+                    <div className="text-[10px] text-white/40 uppercase">Satisfaction</div>
+                  </div>
+                  <div className="border-x border-white/5">
+                    <div className="text-lg md:text-xl font-bold text-primary">24/7</div>
+                    <div className="text-[10px] text-white/40 uppercase">Support</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-primary">24/7</div>
-                    <div className="text-xs text-white/60">Support</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-primary">Fast</div>
-                    <div className="text-xs text-white/60">Delivery</div>
+                    <div className="text-lg md:text-xl font-bold text-primary">Fast</div>
+                    <div className="text-[10px] text-white/40 uppercase">Delivery</div>
                   </div>
                 </div>
               </div>
-
             </div>
           </FadeIn>
-
         </div>
 
         {/* ================= SKILLS ================= */}
