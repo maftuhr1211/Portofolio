@@ -1,11 +1,12 @@
+"use client";
+
 import React, { useState } from 'react';
-import { Mail, Linkedin, Instagram, MessageSquare, Send, MapPin } from 'lucide-react';
+import { Mail, Linkedin, Instagram, MessageSquare, Send, MapPin, Loader2 } from 'lucide-react';
 import FadeIn from '../animations/FadeIn';
 import { PERSONAL_INFO, SOCIAL_LINKS } from '../../utils/constants';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +18,8 @@ const Contact = () => {
     message: ''
   });
 
+  const [isSending, setIsSending] = useState(false);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -27,6 +30,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Validasi Dasar
     if (!formData.name || !formData.email || !formData.message) {
       setStatus({ type: 'error', message: 'Please fill in all fields' });
       return;
@@ -38,33 +42,43 @@ const Contact = () => {
       return;
     }
 
-    emailjs.send(
-      "service_12mroy",     // ganti
-      "template_zsscd93",    // ganti
-      {
-        user_name: formData.name,
-        user_email: formData.email,
-        message: formData.message,
-      },
-      "ChVeU371MCGGKNdoN"      // ganti
-    )
-    .then(() => {
-      setStatus({
-        type: 'success',
-        message: "Message sent successfully! I'll get back to you soon."
-      });
-      setFormData({ name: '', email: '', message: '' });
-    })
-    .catch(() => {
-      setStatus({
-        type: 'error',
-        message: "Failed to send message. Please try again."
-      });
-    });
+    setIsSending(true);
 
-    setTimeout(() => {
-      setStatus({ type: '', message: '' });
-    }, 5000);
+    // SESUAIKAN DENGAN VARIABLE DI DASHBOARD EMAILJS KAMU
+    const templateParams = {
+      name: formData.name,    // Harus 'name' agar terbaca {{name}} di dashboard
+      email: formData.email,  // Harus 'email' agar terbaca {{email}} di dashboard
+      message: formData.message,
+      reply_to: formData.email
+    };
+
+    emailjs.send(
+      "service_12mroy",
+      "template_zsscd93",
+      templateParams,
+      "ChVeU371MCGGKNdoN"
+    )
+      .then(() => {
+        setStatus({
+          type: 'success',
+          message: "Thanks Roy! Your message is in my inbox. I'll get back to you soon."
+        });
+        setFormData({ name: '', email: '', message: '' });
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        setStatus({
+          type: 'error',
+          message: "Failed to send message. Please try again or email me directly."
+        });
+      })
+      .finally(() => {
+        setIsSending(false);
+        // Hilangkan notifikasi setelah 5 detik
+        setTimeout(() => {
+          setStatus({ type: '', message: '' });
+        }, 5000);
+      });
   };
 
   const socialIcons = {
@@ -74,162 +88,156 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative scroll-mt-5 bg-black overflow-hidden">
-
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 opacity-30 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/20 opacity-30 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 opacity-30 rounded-full blur-3xl" />
+    <section id="contact" className="relative scroll-mt-20 bg-black overflow-hidden py-20">
+      {/* Background Decorative Blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-        <FadeIn delay={0}>
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
               <MessageSquare className="w-4 h-4 text-primary" />
-              <span className="text-sm text-primary font-medium tracking-wider uppercase">
+              <span className="text-xs text-primary font-bold tracking-[0.2em] uppercase">
                 Get In Touch
               </span>
             </div>
-
-            <h2 className="text-3xl lg:text-4xl font-normal text-white mb-2">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Let’s Work Together
             </h2>
-
-            <p className="text-lg text-white/60 max-w-2xl mx-auto">
-              Feel free to reach out for collaborations or just a friendly hello 👋
+            <p className="text-white/60 max-w-xl mx-auto text-lg">
+              Have a project in mind? Reach out for collaborations or just a friendly hello.
             </p>
           </div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-
-          {/* FORM */}
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+          {/* LEFT: FORM */}
           <FadeIn delay={100}>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-              <form onSubmit={handleSubmit} className="space-y-4">
-
+            <div className="h-full bg-white/[0.03] border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-sm">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label className="block text-sm text-white/80 mb-2">Name</label>
+                  <label className="block text-sm font-medium text-white/80 mb-2">Name</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-white transition-all duration-300 hover:border-primary/40 focus:outline-none focus:border-primary/60"
+                    placeholder="Your Name"
+                    className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-white/20 transition-all focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-white/70 mb-1">Email</label>
+                  <label className="block text-sm font-medium text-white/80 mb-2">Email</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-white transition-all duration-300 hover:border-primary/40 focus:outline-none focus:border-primary/60"
+                    placeholder="email@example.com"
+                    className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-white/20 transition-all focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-white/70 mb-1">Message</label>
+                  <label className="block text-sm font-medium text-white/80 mb-2">Message</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-white resize-none transition-all duration-300 hover:border-primary/40 focus:outline-none focus:border-primary/60"
+                    placeholder="How can I help you?"
+                    className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-white/20 resize-none transition-all focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full px-5 py-2.5 rounded-lg bg-primary text-white flex justify-center items-center gap-2 transition-all duration-300 hover:bg-[#1e293b] group"
+                  disabled={isSending}
+                  className="w-full py-4 rounded-xl bg-primary text-white font-bold flex justify-center items-center gap-2 transition-all duration-300 hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed group shadow-lg shadow-primary/20"
                 >
-                  Send Message
-                  <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
+                  {isSending ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </>
+                  )}
                 </button>
 
                 {status.message && (
-                  <div className={`text-sm mt-2 ${status.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                  <div className={`p-4 rounded-lg text-sm text-center animate-in fade-in slide-in-from-top-2 ${status.type === 'success' ? 'bg-green-500/10 text-green-400 border border-green-500/20' : 'bg-red-500/10 text-red-400 border border-red-500/20'
+                    }`}>
                     {status.message}
                   </div>
                 )}
-
               </form>
             </div>
           </FadeIn>
 
-          {/* CONTACT INFO */}
+          {/* RIGHT: CONTACT INFO */}
           <FadeIn delay={200}>
-            <div className="space-y-6">
-
-              <div>
-                <h3 className="text-2xl font-semibold text-white mb-4">
-                  Let's Contact
-                </h3>
-                <p className="text-white/60 leading-relaxed">
-                  I'm always open to discussing new projects, creative ideas, or opportunities.
+            <div className="flex flex-col justify-between h-full space-y-8">
+              <div className="space-y-6">
+                <h3 className="text-3xl font-bold text-white">Let's Connect</h3>
+                <p className="text-white/60 text-lg leading-relaxed">
+                  I'm currently open to new opportunities and interesting projects.
+                  Let's discuss how we can build something amazing together.
                 </p>
-              </div>
 
-              <div className="space-y-3">
-
-                <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <div className="flex items-start gap-4">
-                    <Mail className="w-5 h-5 text-primary" />
+                <div className="grid gap-4">
+                  <div className="flex items-center gap-4 p-4 bg-white/[0.03] border border-white/10 rounded-2xl">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <Mail className="w-6 h-6 text-primary" />
+                    </div>
                     <div>
-                      <p className="text-sm text-white/60 mb-1">Email</p>
-                      <a
-                        href={`mailto:${PERSONAL_INFO.email}`}
-                        className="text-white hover:text-primary transition-colors font-medium"
-                      >
+                      <p className="text-xs text-white/40 uppercase tracking-wider font-bold">Email</p>
+                      <a href={`mailto:${PERSONAL_INFO.email}`} className="text-white hover:text-primary transition-colors">
                         {PERSONAL_INFO.email}
                       </a>
                     </div>
                   </div>
-                </div>
 
-                <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <div className="flex items-start gap-4">
-                    <MapPin className="w-5 h-5 text-primary" />
+                  <div className="flex items-center gap-4 p-4 bg-white/[0.03] border border-white/10 rounded-2xl">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <MapPin className="w-6 h-6 text-primary" />
+                    </div>
                     <div>
-                      <p className="text-sm text-white/60 mb-1">Location</p>
-                      <p className="text-white font-medium">
-                        {PERSONAL_INFO.location}
-                      </p>
+                      <p className="text-xs text-white/40 uppercase tracking-wider font-bold">Location</p>
+                      <p className="text-white">{PERSONAL_INFO.location}</p>
                     </div>
                   </div>
                 </div>
-
               </div>
 
-              <div>
-                <p className="text-sm text-white/60 mb-4">Connect with me</p>
+              <div className="pt-8 border-t border-white/10">
+                <p className="text-sm text-white/40 font-bold uppercase tracking-widest mb-6">Social Profiles</p>
                 <div className="flex gap-4">
-                  {Object.entries(SOCIAL_LINKS)
-                    .slice(0, 3)
-                    .map(([platform, url]) => {
-                      const Icon = socialIcons[platform];
-                      return Icon ? (
-                        <a
-                          key={platform}
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300"
-                        >
-                          <Icon className="w-6 h-6 text-white/60 hover:text-primary transition-colors" />
-                        </a>
-                      ) : null;
-                    })}
+                  {Object.entries(SOCIAL_LINKS).map(([platform, url]) => {
+                    const Icon = socialIcons[platform];
+                    return Icon ? (
+                      <a
+                        key={platform}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-4 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 group"
+                      >
+                        <Icon className="w-6 h-6 text-white/60 group-hover:text-primary transition-colors" />
+                      </a>
+                    ) : null;
+                  })}
                 </div>
               </div>
-
             </div>
           </FadeIn>
-
         </div>
       </div>
     </section>
