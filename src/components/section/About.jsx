@@ -128,7 +128,7 @@ const About = () => {
               <div className="sm:col-span-2 bg-white/[0.03] border border-white/10 rounded-2xl p-6">
                 <div className="grid grid-cols-3 gap-2 text-center">
                   <div>
-                    <div className="text-lg md:text-xl font-bold text-primary">100%</div>
+                    <div className="text-lg md:text-xl font-bold text-primary">98%</div>
                     <div className="text-[10px] text-white/40 uppercase">Satisfaction</div>
                   </div>
                   <div className="border-x border-white/5">
