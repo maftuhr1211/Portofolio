@@ -30,7 +30,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="relative py-10 md:py-20 bg-black overflow-hidden scroll-mt-20">
+    <section id="about" className="relative py-20 md:py-20 bg-black overflow-hidden scroll-mt-1">
       <RadialGradientBackground variant="about" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">

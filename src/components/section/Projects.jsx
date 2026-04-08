@@ -81,7 +81,7 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="relative scroll-mt-4 bg-black overflow-hidden">
+        <section id="projects" className="relative scroll-mt-7 bg-black overflow-hidden">
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-1/3 right-0 w-96 h-96 bg-primary/20 opacity-20 rounded-full blur-3xl" />
                 <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-primary/20 opacity-20 rounded-full blur-3xl" />

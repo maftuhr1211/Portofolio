@@ -88,7 +88,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative scroll-mt-20 bg-black overflow-hidden py-20">
+    <section id="contact" className="relative scroll-mt-15 bg-black overflow-hidden py-2">
       {/* Background Decorative Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
