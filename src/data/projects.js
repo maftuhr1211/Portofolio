@@ -22,17 +22,19 @@ import p21 from '../assets/projects/p21.png';
 import p22 from '../assets/projects/p22.png';
 import p23 from '../assets/projects/p23.png';
 import p24 from '../assets/projects/p24.png';
+import p25 from '../assets/projects/p25.png';
+import p26 from '../assets/projects/p26.png';
 
 export const projects = [
   {
-  id: 1,
-  title: 'Idul Fitri Greeting Poster',
-  description: 'An Eid al-Fitr poster design with a split-screen composition that balances the beauty of Islamic architecture and informative contemporary typography.',
-  images: [p1, p2],
-  category: 'Poster',
-  technologies: ['Canva', 'Photoshop'],
-  metrics: 'Automated workflow & data organization',
-  demoUrl: 'xxx',
+    id: 1,
+    title: 'Idul Fitri Greeting Poster',
+    description: 'An Eid al-Fitr poster design with a split-screen composition that balances the beauty of Islamic architecture and informative contemporary typography.',
+    images: [p1, p2],
+    category: 'Poster',
+    technologies: ['Canva', 'Photoshop'],
+    metrics: 'Automated workflow & data organization',
+    demoUrl: 'xxx',
   },
   {
     id: 2,
@@ -40,7 +42,7 @@ export const projects = [
     description: 'A comprehensive automated financial dashboard built in Google Sheets, featuring real-time transaction logging, automated expense categorization, and visual data insights for better money management.',
     images: [p21, p22, p23, p24],
     category: 'Spreadsheets',
-    technologies: ['Google Sheets', 'Excel Formulas (Advanced)', 'Data Visualization'],
+    technologies: ['Google Sheets', 'Excel Formulas', 'Data Visualization'],
     metrics: 'Automated data processing & financial visualization',
     demoUrl: 'xxx',
   },
@@ -66,12 +68,12 @@ export const projects = [
   },
   {
     id: 5,
-    title: 'Nature-Themed Eid Greeting',
-    description: 'A vibrant poster design using creative photo masking and natural elements, blending desert landscapes with lush greenery for a fresh and welcoming Eid atmosphere.',
-    images: [p9, p10],
+    title: 'Gamified Habit Tracker',
+    description: 'A dynamic productivity system built in Google Sheets featuring a leveling system, progress bars, and automated data visualization to transform daily habits into a rewarding gamified experience.',
+    images: [p25, p26],
     category: 'Poster',
-    technologies: ['Canva', 'Photoshop'],
-    metrics: 'Creative masking & color vibrance',
+    technologies: ['Google Sheets', 'Excel Formulas', 'Data Visualization'],
+    metrics: 'Gamified progress tracking & data-driven habits.',
     demoUrl: 'xxx',
   },
   {
@@ -133,15 +135,25 @@ export const projects = [
     technologies: ['Canva', 'Photoshop'],
     metrics: 'Advanced layering & depth composition',
     demoUrl: 'xxx',
-  },  
+  },
+  {
+    id: 12,
+    title: 'Nature-Themed Eid Greeting',
+    description: 'A vibrant poster design using creative photo masking and natural elements, blending desert landscapes with lush greenery for a fresh and welcoming Eid atmosphere.',
+    images: [p9, p10],
+    category: 'Poster',
+    technologies: ['Canva', 'Photoshop'],
+    metrics: 'Creative masking & color vibrance',
+    demoUrl: 'xxx',
+  },
 ];
 
 
 export const categories = [
-    'All',
-    'Spreadsheets',
-    'Poster',
-    'Infografis',
-    'UI Design',
-    'Other',
+  'All',
+  'Spreadsheets',
+  'Poster',
+  'Infografis',
+  'UI Design',
+  'Other',
 ]
