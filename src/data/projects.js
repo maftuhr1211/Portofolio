@@ -71,7 +71,7 @@ export const projects = [
     title: 'Gamified Habit Tracker',
     description: 'A dynamic productivity system built in Google Sheets featuring a leveling system, progress bars, and automated data visualization to transform daily habits into a rewarding gamified experience.',
     images: [p25, p26],
-    category: 'Poster',
+    category: 'Spreadsheets',
     technologies: ['Google Sheets', 'Excel Formulas', 'Data Visualization'],
     metrics: 'Gamified progress tracking & data-driven habits.',
     demoUrl: 'xxx',
