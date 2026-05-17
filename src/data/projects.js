@@ -64,12 +64,12 @@ export const projects = [
   },
   {
     id: 4,
-    title: 'Monochrome Eid Al-Fitr Poster',
-    description: 'A contemporary poster with a dynamic design, highlighting a single colored mosque within a circular frame against a textured monochrome backdrop for a modern and dramatic effect.',
+    title: 'BCA Insurance Annual Report Layout',
+    description: 'A professional editorial design for the PT Asuransi Umum BCA Annual Report, focusing on clean typography, precise multi-column data layouts, and strict adherence to corporate brand guidelines to ensure maximum readability',
     images: [p30, p31, p32],
     category: 'Layouting',
-    technologies: ['Canva', 'Photoshop'],
-    metrics: 'High-contrast framing & spatial dynamics',
+    technologies: ['Indesign', 'Illustrator'],
+    metrics: 'Corporate visual alignment & high-density data layout',
     demoUrl: 'xxx',
   },
   {
