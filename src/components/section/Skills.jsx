@@ -8,11 +8,10 @@ const Skills = () => {
     //categiry skills
     const skillCategories = {
         'Product & UI Design': [
-            skills.find(s => s.name === 'Design Grafis'),
             skills.find(s => s.name === 'Product Design'),
             skills.find(s => s.name === 'UI Design'),
+            skills.find(s => s.name === 'Layouting'),
             skills.find(s => s.name === 'Prototyping'),
-            skills.find(s => s.name === 'Responsive Design'),
         ].filter(Boolean),
 
         'Productivity & Systems': [

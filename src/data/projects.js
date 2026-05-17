@@ -24,6 +24,9 @@ import p23 from '../assets/projects/p23.png';
 import p24 from '../assets/projects/p24.png';
 import p25 from '../assets/projects/p25.png';
 import p26 from '../assets/projects/p26.png';
+import p27 from '../assets/projects/p27.png';
+import p28 from '../assets/projects/p28.png';
+import p29 from '../assets/projects/p29.png';
 
 export const projects = [
   {
