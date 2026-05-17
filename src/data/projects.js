@@ -27,6 +27,9 @@ import p26 from '../assets/projects/p26.png';
 import p27 from '../assets/projects/p27.png';
 import p28 from '../assets/projects/p28.png';
 import p29 from '../assets/projects/p29.png';
+import p30 from '../assets/projects/p30.png';
+import p31 from '../assets/projects/p31.png';
+import p32 from '../assets/projects/p32.png';
 
 export const projects = [
   {
@@ -53,8 +56,8 @@ export const projects = [
     id: 3,
     title: 'Eid Al-Fitr Greenery Poster',
     description: 'A serene poster design featuring a soft sage green color palette and organic shapes, creating a modern yet spiritual aesthetic for Eid celebrations.',
-    images: [p5, p6],
-    category: 'Poster',
+    images: [p27, p28, p29],
+    category: 'Layouting',
     technologies: ['Canva', 'Photoshop'],
     metrics: 'Color harmony & organic shapes integration',
     demoUrl: 'xxx',
@@ -63,8 +66,8 @@ export const projects = [
     id: 4,
     title: 'Monochrome Eid Al-Fitr Poster',
     description: 'A contemporary poster with a dynamic design, highlighting a single colored mosque within a circular frame against a textured monochrome backdrop for a modern and dramatic effect.',
-    images: [p7, p8],
-    category: 'Poster',
+    images: [p30, p31, p32],
+    category: 'Layouting',
     technologies: ['Canva', 'Photoshop'],
     metrics: 'High-contrast framing & spatial dynamics',
     demoUrl: 'xxx',
@@ -149,6 +152,26 @@ export const projects = [
     metrics: 'Creative masking & color vibrance',
     demoUrl: 'xxx',
   },
+    {
+    id: 13,
+    title: 'Eid Al-Fitr Greenery Poster',
+    description: 'A serene poster design featuring a soft sage green color palette and organic shapes, creating a modern yet spiritual aesthetic for Eid celebrations.',
+    images: [p5, p6],
+    category: 'Poster',
+    technologies: ['Canva', 'Photoshop'],
+    metrics: 'Color harmony & organic shapes integration',
+    demoUrl: 'xxx',
+  },
+    {
+    id: 14,
+    title: 'Monochrome Eid Al-Fitr Poster',
+    description: 'A contemporary poster with a dynamic design, highlighting a single colored mosque within a circular frame against a textured monochrome backdrop for a modern and dramatic effect.',
+    images: [p7, p8],
+    category: 'Poster',
+    technologies: ['Canva', 'Photoshop'],
+    metrics: 'High-contrast framing & spatial dynamics',
+    demoUrl: 'xxx',
+  },
 ];
 
 
@@ -157,6 +180,6 @@ export const categories = [
   'Spreadsheets',
   'Poster',
   'Infografis',
-  'UI Design',
+  'Layouting',
   'Other',
 ]

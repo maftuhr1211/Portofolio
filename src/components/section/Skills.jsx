@@ -5,7 +5,7 @@ import FadeIn from '../animations/FadeIn';
 
 const Skills = () => {
 
-    //categiry skills
+    //category skills
     const skillCategories = {
         'Product & UI Design': [
             skills.find(s => s.name === 'Product Design'),
