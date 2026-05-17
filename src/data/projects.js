@@ -54,12 +54,12 @@ export const projects = [
   },
   {
     id: 3,
-    title: 'Eid Al-Fitr Greenery Poster',
-    description: 'A serene poster design featuring a soft sage green color palette and organic shapes, creating a modern yet spiritual aesthetic for Eid celebrations.',
+    title: 'Pyridam Farma Annual Report Layout',
+    description: 'A dynamic corporate editorial design for the PT Pyridam Farma Tbk Annual Report, integrating clean medical visual themes with structured data charts to present corporate performance clearly.',
     images: [p27, p28, p29],
     category: 'Layouting',
-    technologies: ['Canva', 'Photoshop'],
-    metrics: 'Color harmony & organic shapes integration',
+    technologies: ['Indesign', 'Illustrator'],
+    metrics: 'Data infographic design & layout standardization',
     demoUrl: 'xxx',
   },
   {
