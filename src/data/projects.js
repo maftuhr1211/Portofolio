@@ -30,6 +30,15 @@ import p29 from '../assets/projects/p29.png';
 import p30 from '../assets/projects/p30.png';
 import p31 from '../assets/projects/p31.png';
 import p32 from '../assets/projects/p32.png';
+import p33 from '../assets/projects/p33.png';
+import p34 from '../assets/projects/p34.png';
+import p35 from '../assets/projects/p35.png';
+import p36 from '../assets/projects/p36.png';
+import p37 from '../assets/projects/p37.png';
+import p38 from '../assets/projects/p38.png';
+import p39 from '../assets/projects/p39.png';
+import p40 from '../assets/projects/p40.png';
+import p41 from '../assets/projects/p41.png';
 
 export const projects = [
   {
@@ -84,22 +93,22 @@ export const projects = [
   },
   {
     id: 6,
-    title: 'Lailatul Qadr Infographic',
-    description: 'An educational infographic featuring playful illustrations and a structured layout to explain the significance and practices of Lailatul Qadr in a visually engaging way.',
-    images: [p11, p12,],
-    category: 'Infografis',
-    technologies: ['Canva', 'PhotoShop'],
-    metrics: 'Information hierarchy & illustrative storytelling',
+    title: 'Kino Indonesia Annual Report Layout',
+    description: 'A vibrant corporate layout design for the PT Kino Indonesia Tbk Annual Report, utilizing high-contrast deep blue color blocks and dynamic image positioning to highlight corporate branding and product showcases.',
+    images: [p33, p34, p35],
+    category: 'Layouting',
+    technologies: ['Indesign', 'Illustrator'],
+    metrics: 'Visual hierarchy optimization & publication layout design',
     demoUrl: 'xxx',
   },
   {
     id: 7,
-    title: 'Illustrated Eid Greeting',
-    description: 'A vibrant poster design with cute characters and a gentle color palette, creating a warm and welcoming Eid atmosphere.',
-    images: [p13, p14,],
-    category: 'Poster',
-    technologies: ['Canva', 'Photoshop'],
-    metrics: 'Character-driven storytelling & color balance',
+    title: 'Modernland Realty Annual Report Layout',
+    description: 'A precise corporate layout design for the PT Modernland Realty Tbk Annual Report, organizing dense financial statements and complex tables into a highly readable and professional format.',
+    images: [p36, p37, p38],
+    category: 'Layouting',
+    technologies: ['Indesign', 'Illustrator'],
+    metrics: 'Grid system precision & corporate typography selection',
     demoUrl: 'xxx',
   },
   {
@@ -114,12 +123,12 @@ export const projects = [
   },
   {
     id: 9,
-    title: 'Eco-Awareness Guide',
-    description: 'A compelling educational infographic using character-driven illustrations to highlight environmental issues and promote sustainable living habits.',
-    images: [p17, p18],
-    category: 'Infografis',
-    technologies: ['Canva', 'Photoshop'],
-    metrics: 'Visual storytelling & social impact',
+    title: 'Chitose International Annual Report Layout',
+    description: 'A clean and minimalist corporate layout design for the PT Chitose Internasional Tbk Annual Report, focusing on structured financial tables and a fresh corporate color scheme to enhance readability.',
+    images: [p39, p40, p41],
+    category: 'Layouting',
+    technologies: ['Indesign', 'Illustrator'],
+    metrics: 'Data grid optimization & minimalist layout design',
     demoUrl: 'xxx',
   },
   {
@@ -170,6 +179,36 @@ export const projects = [
     category: 'Poster',
     technologies: ['Canva', 'Photoshop'],
     metrics: 'High-contrast framing & spatial dynamics',
+    demoUrl: 'xxx',
+  },
+    {
+    id: 15,
+    title: 'Lailatul Qadr Infographic',
+    description: 'An educational infographic featuring playful illustrations and a structured layout to explain the significance and practices of Lailatul Qadr in a visually engaging way.',
+    images: [p11, p12,],
+    category: 'Infografis',
+    technologies: ['Canva', 'PhotoShop'],
+    metrics: 'Information hierarchy & illustrative storytelling',
+    demoUrl: 'xxx',
+  },
+    {
+    id: 16,
+    title: 'Illustrated Eid Greeting',
+    description: 'A vibrant poster design with cute characters and a gentle color palette, creating a warm and welcoming Eid atmosphere.',
+    images: [p13, p14,],
+    category: 'Poster',
+    technologies: ['Canva', 'Photoshop'],
+    metrics: 'Character-driven storytelling & color balance',
+    demoUrl: 'xxx',
+  },
+    {
+    id: 17,
+    title: 'Eco-Awareness Guide',
+    description: 'A compelling educational infographic using character-driven illustrations to highlight environmental issues and promote sustainable living habits.',
+    images: [p17, p18],
+    category: 'Infografis',
+    technologies: ['Canva', 'Photoshop'],
+    metrics: 'Visual storytelling & social impact',
     demoUrl: 'xxx',
   },
 ];
